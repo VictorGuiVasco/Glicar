@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity } from 'react-native';
+import Constants from 'expo-constants'
 
 export default class App extends Component {
-
-  /* width: 414px;
-  height: 896px;
-  overflow: hidden;
-  background-color: #ffffff; */
 
   render() {
     return (
@@ -32,6 +28,14 @@ export default class App extends Component {
           />
         </View>
 
+        <View style={styles.singInView} >
+          <TouchableOpacity style={styles.btnSingIn} >
+            <View  >
+              <Text style={styles.TextSingIn} >Sing In</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+
         <View style={styles.buttonView} >
           <TouchableOpacity style={styles.button} >
             <View style={styles.btnSenha} >
@@ -46,14 +50,6 @@ export default class App extends Component {
           </TouchableOpacity>
         </View>
 
-        <View style={styles.singInView} >
-          <TouchableOpacity style={styles.btnSingIn} >
-            <View  >
-              <Text style={styles.TextSingIn} >Sing In</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
-
       </View>
     );
   }
@@ -62,6 +58,7 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: Constants.statusBarHeight + 15
   },
 
   logo: {
@@ -72,30 +69,73 @@ const styles = StyleSheet.create({
   imageView: {
     flex: 2,
     alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 30,
+    justifyContent: 'center'
   },
 
   textInput: {
-    borderRadius: 8,
+    borderRadius: 10,
 
     padding: 12,
     height: 50,
-    margin: 30,
+    marginHorizontal: 30,
     marginVertical: 5,
 
-    fontSize: 20,
+    fontSize: 15,
 
     backgroundColor: '#EBEBEB',
-    color: '#333333'
+    color: '#333333',
   },
 
-  buttonView: {
+  singInView: {
+    marginVertical: 5,
 
+    height: 50,
+
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'stretch',
+
+  },
+
+  btnSingIn: {
+    flex: 1,
+    borderRadius: 10,
+
+    padding: 12,
+    height: 48,
     marginHorizontal: 30,
 
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'center',
+
+    backgroundColor: '#fff',
+
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
+  },
+
+  TextSingIn: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: 15,
+
+    fontWeight: 'bold',
+    color: '#333'
+  },
+
+  buttonView: {
+    flex: 1,
+    marginHorizontal: 30,
+
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
 
   button: {
@@ -121,53 +161,9 @@ const styles = StyleSheet.create({
 
   btnText: {
     fontSize: 14,
-
-    textDecorationLine: 'underline',
     fontWeight: 'bold',
 
     color: '#AAA'
-  },
-
-  singInView: {
-    flex: 1,
-
-    marginHorizontal: 30,
-    marginTop: 20,
-
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'stretch',
-
-  },
-
-  btnSingIn: {
-    borderRadius: 8,
-
-    padding: 10,
-    height: 45,
-    width: 100,
-
-    flexDirection: 'row',
-    justifyContent: 'center',
-
-    backgroundColor: '#fff',
-
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-
-    elevation: 5,
-  },
-
-  TextSingIn: {
-    fontSize: 16,
-
-    fontWeight: 'bold',
-    color: '#333'
   },
 
 });
