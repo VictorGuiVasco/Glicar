@@ -31,7 +31,7 @@ export default class App extends Component {
         <View style={styles.singInView} >
           <TouchableOpacity style={styles.btnSingIn} >
             <View  >
-              <Text style={styles.TextSingIn} >Sing In</Text>
+              <Text style={styles.TextSingIn} >Sign In</Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -94,7 +94,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'stretch',
-
   },
 
   btnSingIn: {
@@ -149,7 +148,6 @@ const styles = StyleSheet.create({
 
     alignItems: 'flex-end',
     justifyContent: 'center',
-
   },
 
   btnSenha: {
