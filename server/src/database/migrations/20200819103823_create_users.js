@@ -1,5 +1,7 @@
-export async function up(Knex) {
-    return Knex.schema.createTable('users', (table) => {
+//npx knex migrate:make create_users
+
+exports.up = function(knex) {
+    return knex.schema.createTable('users', (table) => {
         table.increments('id').primary()
         table.string('name').notNullable()
         table.string('email').notNullable()
@@ -10,8 +12,8 @@ export async function up(Knex) {
         table.decimal('peso').notNullable()
         table.decimal('imc').notNullable()
     })
-}
+};
 
-export async function down(knex) {
+exports.down = function(knex) {
     return knex.schema.dropTable('users');
-  }
+};

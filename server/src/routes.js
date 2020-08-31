@@ -1,5 +1,10 @@
-import express from 'express'
+const express = require('express')
+
+const UsersControllers = require('./controllers/UsersController')
 
 const routes = express.Router();
 
-export default routes
+routes.get('/users', UsersControllers.index)
+routes.post('/users', UsersControllers.aa)
+
+module.exports = routes

@@ -4,12 +4,15 @@
   "main": "server.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon --transpile-only --ignore-watch node_modules --respawn src/server.js",
+    "start": "nodemon src/server.js",
     "knex:migrate": "knex --knexfile knexfile.js migrate:latest"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "knex": "^0.21.4",
+    "nodemon": "^2.0.4",
     "sqlite3": "^5.0.0"
   },
   "devDependencies": {},

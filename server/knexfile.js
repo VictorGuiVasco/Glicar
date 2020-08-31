@@ -1,12 +1,48 @@
-import path from 'path';
+// Update with your config settings.
 
 module.exports = {
-  client: 'sqlite3',
-  connection: {
-    filename: path.resolve(__dirname, 'src', 'database', 'database.sqlite'),
+
+  development: {
+    client: 'sqlite3',
+    connection: {
+      filename: './src/database/db.sqlite'
+    },
+    migrations: {
+      directory: './src/database/migrations'
+    },
+    useNullAsDefault: true
   },
-  migrations: {
-    directory: path.resolve(__dirname, 'src', 'database', 'migrations'),
+
+  staging: {
+    client: 'postgresql',
+    connection: {
+      database: 'my_db',
+      user:     'username',
+      password: 'password'
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    }
   },
-  useNullAsDefault: true,
+
+  production: {
+    client: 'postgresql',
+    connection: {
+      database: 'my_db',
+      user:     'username',
+      password: 'password'
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    }
+  }
+
 };
