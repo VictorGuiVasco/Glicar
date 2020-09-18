@@ -3,12 +3,10 @@ const ValidaEmail = require('../utils/emailValidation')
 
 module.exports = {
     async index(req, resp) {
-        const users = await db('users').where('id', id).select()
 
-        return resp.json(users)
     },
 
-    async aa(req, resp) {
+    async create(req, resp) {
         const {
             name,
             email,
@@ -28,7 +26,7 @@ module.exports = {
 
             //Validar se o email ja esta cadastrado
             const users = await db('users').select('email').where('email', email)
-            if(users.length >= 1){
+            if (users.length >= 1) {
                 console.log('Email ja existe')
                 return resp.status(401).json({ error: 'Informe um email que não foi cadastrado' });
             }
