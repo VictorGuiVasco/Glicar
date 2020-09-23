@@ -1,0 +1,75 @@
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+
+import Icon from 'react-native-vector-icons/Ionicons';
+
+import Login from './src/pages/Login';
+import Senha from './src/pages/Senha';
+import Cadastro from './src/pages/Cadastro';
+import Wellcome from './src/pages/Wellcome';
+
+import Home from './src/pages/Home';
+import Prato from './src/pages/Prato';
+import Perfil from './src/pages/Perfil';
+import Cardapio from './src/pages/Cardapio';
+import Glicemia from './src/pages/Glicemia';
+
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
+const icons = {
+  Home: {
+    name: 'ios-home'
+  },
+  Perfil: {
+    name: 'ios-people'
+  },
+  Cardapio: {
+    name: 'ios-call'
+  },
+  Glicemia: {
+    name: 'ios-call'
+  }
+};
+
+function Tabs() {
+  return (
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ color, size }) => {
+          const { name } = icons[route.name];
+          return <Icon name={name} color={color} size={size} />
+        }
+      })}
+      tabBarOptions={{
+        style: {
+          backgroundColor: '#0C0C0C'
+        },
+        activeTintColor: '#FFF',
+      }}
+    >
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Perfil" component={Perfil} />
+      <Tab.Screen name="Cardapio" component={Cardapio} />
+      <Tab.Screen name="Glicemia" component={Glicemia} />
+    </Tab.Navigator>
+  );
+}
+
+export default function App(){
+  return(
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Wellcome" >
+        <Stack.Screen name="Wellcome" component={Wellcome} options={{headerShown: false,}} />
+        <Stack.Screen name="Login" component={Login} options={{headerShown: false,}} />
+        <Stack.Screen name="Senha" component={Senha} options={{headerShown: false,}} />
+        <Stack.Screen name="Cadastro" component={Cadastro} options={{headerShown: false,}} />
+        <Stack.Screen name="Prato" component={Prato} options={{headerShown: false,}} />
+
+        <Stack.Screen name="Home" component={Tabs} options={{headerShown: false,}} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
