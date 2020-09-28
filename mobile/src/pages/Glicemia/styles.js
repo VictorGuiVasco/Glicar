@@ -5,7 +5,7 @@ import Constants from 'expo-constants'
 export default StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: Constants.statusBarHeight + 25,
+        paddingTop: Constants.statusBarHeight + 35,
         backgroundColor: '#fff'
     },
 
@@ -16,28 +16,34 @@ export default StyleSheet.create({
     },
 
     text: {
-        fontSize: 18
+        fontSize: 18,
+        marginBottom: 8,
+    },
+
+    tituloContainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 
     glicContainer: {
-        flex: 1,
+        flex: 4,
         justifyContent: 'center',
         alignItems: 'center'
     },
 
-    glicose: {
-        width: '50%',
+    btn: {
+        width: '70%',
         borderRadius: 5,
 
         padding: 12,
         height: 45,
         marginTop: 5,
-        marginBottom: 10,
+        marginVertical: 8,
 
         flexDirection: 'row',
         justifyContent: 'center',
 
-        backgroundColor: '#ebebeb',
+        backgroundColor: '#fff',
 
         shadowColor: "#000",
         shadowOffset: {
@@ -49,30 +55,13 @@ export default StyleSheet.create({
 
         elevation: 5,
     },
-    
-    tempo: {
 
-        textAlign: 'center',
-        width: '50%',
-        borderRadius: 5,
-
-        padding: 12,
-        height: 45,
-        marginVertical: 5,
-
-        flexDirection: 'row',
+    txtButton: {
         justifyContent: 'center',
+        alignItems: 'center',
+        fontSize: 15,
 
-        backgroundColor: '#ebebeb',
-
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-
-        elevation: 5,
-    }
+        fontWeight: 'bold',
+        color: '#333'
+    },
 })

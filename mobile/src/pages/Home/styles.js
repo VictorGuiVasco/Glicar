@@ -5,30 +5,33 @@ import Constants from 'expo-constants'
 export default StyleSheet.create({
     container: {
         flex: 1,
+        alignItems: 'center',
         paddingTop: Constants.statusBarHeight + 35,
         backgroundColor: '#fff'
     },
 
-    titulo: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        textAlign: 'center',
+    graficContainer: {
+        flex: 1,
+        width: '80%',
+        paddingBottom: 20,
+        justifyContent: 'space-between'
     },
 
-    text: {
-        fontSize: 18,
-        marginBottom: 8,
-    },
+    foodContainer: {
+        width: '80%',
+        height: '25%',
+        borderWidth: 0.5,
 
-    tituloContainer: {
-        justifyContent: 'center',
         alignItems: 'center',
+        justifyContent: 'center'
     },
 
-    glicContainer: {
-        flex: 4,
-        justifyContent: 'center',
-        alignItems: 'center'
+    grafic: {
+        height: '48%',
+        borderWidth: 0.5,
+
+        alignItems: 'center',
+        justifyContent: 'center'
     },
 
     btn: {
@@ -38,7 +41,7 @@ export default StyleSheet.create({
         padding: 12,
         height: 45,
         marginTop: 5,
-        marginVertical: 8,
+        marginVertical: 15,
 
         flexDirection: 'row',
         justifyContent: 'center',
@@ -54,14 +57,5 @@ export default StyleSheet.create({
         shadowRadius: 3.84,
 
         elevation: 5,
-    },
-
-    txtButton: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 15,
-
-        fontWeight: 'bold',
-        color: '#333'
     },
 })

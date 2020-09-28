@@ -1,21 +1,33 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, Picker } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import styles from './styles'
 
 export default function Glicemia() {
- return (
-   <View style={styles.container} >
-     <Text style={styles.titulo}>GLICEMIA</Text>
+  const nav = useNavigation();
 
-    <View style={styles.glicContainer} >
-      <Text style={styles.text} >Qual o nivel da sua Glicose</Text>
-      <TextInput style={styles.glicose} />
+  return (
+    <View style={styles.container} >
+      <View style={styles.tituloContainer}>
+        <Text style={styles.titulo}>GLICEMIA</Text>
+      </View>
 
-      <Text style={styles.text} >Quando você mediu?</Text>
-      <Text style={styles.tempo} >Selecione</Text>
+      <View style={styles.glicContainer} >
+        <Text style={styles.text} >Horario da medição</Text>
+
+        <TouchableOpacity style={styles.btn} onPress={() => { nav.navigate('InsertGlicemia') }}>
+          <View>
+            <Text style={styles.txtButton} >AGORA</Text>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.btn} onPress={() => { nav.navigate('GHorario') }}>
+          <View>
+            <Text style={styles.txtButton} >MEDI ANTES</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
     </View>
-
-   </View>
   );
 }

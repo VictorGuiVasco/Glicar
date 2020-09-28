@@ -6,32 +6,40 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: Constants.statusBarHeight + 35,
-        backgroundColor: '#fff'
-    },
+        backgroundColor: '#fff',
 
-    titulo: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        textAlign: 'center',
-    },
-
-    text: {
-        fontSize: 18,
-        marginBottom: 8,
-    },
-
-    tituloContainer: {
-        justifyContent: 'center',
         alignItems: 'center',
+        justifyContent: 'space-evenly'
     },
 
-    glicContainer: {
-        flex: 4,
-        justifyContent: 'center',
-        alignItems: 'center'
+    porcaoContainer: {
+        width: '100%',
+
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-around'
     },
 
     btn: {
+        borderRadius: 5,
+    
+        width: 48,
+        height: 48,
+        padding: 15,
+       
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+    
+        elevation: 5,
+        shadowColor: "#000",
+        backgroundColor: '#fff'
+    },
+
+    btnAvancar: {
         width: '70%',
         borderRadius: 5,
 
@@ -54,14 +62,5 @@ export default StyleSheet.create({
         shadowRadius: 3.84,
 
         elevation: 5,
-    },
-
-    txtButton: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 15,
-
-        fontWeight: 'bold',
-        color: '#333'
     },
 })

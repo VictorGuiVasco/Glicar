@@ -1,34 +1,18 @@
 import { StyleSheet } from 'react-native'
 
-import Constants from 'expo-constants'
-
 export default StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: Constants.statusBarHeight + 35,
-        backgroundColor: '#fff'
-    },
+        backgroundColor: '#fff',
 
-    titulo: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        textAlign: 'center',
+        alignItems: 'center',
+        justifyContent: 'center'
     },
 
     text: {
         fontSize: 18,
         marginBottom: 8,
-    },
-
-    tituloContainer: {
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-
-    glicContainer: {
-        flex: 4,
-        justifyContent: 'center',
-        alignItems: 'center'
+        textDecorationLine: 'underline'
     },
 
     btn: {
@@ -57,11 +41,11 @@ export default StyleSheet.create({
     },
 
     txtButton: {
-        justifyContent: 'center',
-        alignItems: 'center',
+        color: '#333',
         fontSize: 15,
-
         fontWeight: 'bold',
-        color: '#333'
+
+        alignItems: 'center',
+        justifyContent: 'center',
     },
 })

@@ -25,7 +25,8 @@ export default StyleSheet.create({
       },
       textData: {
         fontSize: 18,
-        paddingLeft: 30
+        paddingLeft: 30,
+        marginVertical: 10
       },
       userData: {
           flex: 2
