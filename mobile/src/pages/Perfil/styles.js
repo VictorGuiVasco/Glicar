@@ -8,26 +8,35 @@ export default StyleSheet.create({
         paddingTop: Constants.statusBarHeight + 10,
         backgroundColor: '#fff'
       },
+
       userView: {
         flex: 1,
         flexDirection: 'row',
-        paddingLeft: 30,
-        alignItems: 'center'
+        paddingHorizontal: '7%',
+        alignItems: 'center',
+        justifyContent: 'space-between'
       },
+
       image: {
           width: 75,
           height: 75
       },
+
       text: {
-        fontSize: 18,
-        paddingLeft: 30,
-        paddingTop: 10
+        fontSize: 30,
+        fontWeight: 'bold', 
+
+        maxWidth: 290,
+        color: '#42AEFF'
       },
+
       textData: {
-        fontSize: 18,
+        fontSize: 20,
         paddingLeft: 30,
-        marginVertical: 10
+        marginVertical: 10,
+        color: '#7A63FF'
       },
+
       userData: {
           flex: 2
       },

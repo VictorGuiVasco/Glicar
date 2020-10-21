@@ -5,29 +5,32 @@ import Constants from 'expo-constants'
 export default StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: Constants.statusBarHeight + 35,
-        backgroundColor: '#fff'
+        paddingTop: Constants.statusBarHeight + 45,
+        backgroundColor: '#fff',
     },
 
     tituloContainer: {
+        marginHorizontal: '7%',
+        flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center',
-        paddingBottom: 15
+        justifyContent: 'space-evenly',
     },
 
     titulo: {
-        fontSize: 26,
+        fontSize: 35,
         fontWeight: 'bold',
-        fontFamily: 'Roboto'
+    },
+
+    logoIcon: {
+        width: 80,
+        height: 80
     },
 
     inputView: {
-        flex: 5,
-        justifyContent: 'center'
+        paddingVertical: '20%',
     },
 
     textInput: {
-        borderWidth: 0.1,
         borderRadius: 5,
 
         padding: 12,
@@ -46,18 +49,23 @@ export default StyleSheet.create({
         color: '#777'
     },
 
-    btnSingIn: {
+    signUpView: {
+        height: '15%',
+        marginTop: 5
+    },
+
+    btnSignUp: {
         borderRadius: 5,
 
-        padding: 12,
-        height: 48,
+        padding: 15,
+        height: 50,
         marginHorizontal: '7%',
-        marginVertical: 7,
+        marginVertical: 0,
 
         flexDirection: 'row',
         justifyContent: 'center',
 
-        backgroundColor: '#fff',
+        backgroundColor: '#7A63FF',
 
         shadowColor: "#000",
         shadowOffset: {
@@ -70,13 +78,13 @@ export default StyleSheet.create({
         elevation: 5,
     },
 
-    TextSingIn: {
+    TextSignUp: {
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 15,
 
         fontWeight: 'bold',
-        color: '#333'
+        color: '#fff'
     },
 
     pickerSexo: {
@@ -105,4 +113,4 @@ export default StyleSheet.create({
         height: 50,
 
     }
-})  
+})

@@ -1,40 +1,38 @@
 import { StyleSheet } from 'react-native'
-
 import Constants from 'expo-constants'
 
 export default StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: Constants.statusBarHeight + 35,
-        backgroundColor: '#fff',
+        paddingTop: Constants.statusBarHeight + 15,
+        backgroundColor: '#FFF',
+        justifyContent: 'space-around'
     },
 
-    tituloContainer: {
-        marginVertical: 35,
+    imageView: {
         alignItems: 'center',
+        justifyContent: 'center'
     },
 
-    titulo: {
-        fontSize: 35,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        color: '#7A63FF'
+    logo: {
+        width: 220,
+        height: 220
     },
 
-    glicContainer: {
-        flex: 1,
+    buttonView: {
+        height: 50,
+
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'stretch',
     },
 
-    nowButton: {
-        width: '70%',
+    signInButton: {
         borderRadius: 5,
 
         padding: 15,
         height: 50,
-        marginTop: 5,
-        marginVertical: 8,
+        marginBottom: 10,
+        marginHorizontal: 30,
 
         flexDirection: 'row',
         justifyContent: 'center',
@@ -52,13 +50,13 @@ export default StyleSheet.create({
         elevation: 5,
     },
 
-    afterButton: {
-        width: '70%',
+    signUpButton: {
         borderRadius: 5,
 
-        padding: 12,
-        height: 45,
-        marginTop: 5,
+        padding: 15,
+        height: 50,
+        marginBottom: 10,
+        marginHorizontal: 30,
 
         flexDirection: 'row',
         justifyContent: 'center',
@@ -76,7 +74,7 @@ export default StyleSheet.create({
         elevation: 5,
     },
 
-    txtButton: {
+    text: {
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 15,

@@ -10,19 +10,17 @@ export default function Glicemia() {
   return (
     <View style={styles.container} >
       <View style={styles.tituloContainer}>
-        <Text style={styles.titulo}>GLICEMIA</Text>
-      </View>
+        <Text style={styles.titulo}>Horário da Medição</Text>
+      </View> 
 
       <View style={styles.glicContainer} >
-        <Text style={styles.text} >Horario da medição</Text>
-
-        <TouchableOpacity style={styles.btn} onPress={() => { nav.navigate('InsertGlicemia') }}>
+        <TouchableOpacity style={styles.nowButton} onPress={() => { nav.navigate('InsertGlicemia') }}>
           <View>
             <Text style={styles.txtButton} >AGORA</Text>
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.btn} onPress={() => { nav.navigate('GHorario') }}>
+        <TouchableOpacity style={styles.afterButton} onPress={() => { nav.navigate('GHorario') }}>
           <View>
             <Text style={styles.txtButton} >MEDI ANTES</Text>
           </View>

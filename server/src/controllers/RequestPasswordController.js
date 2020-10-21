@@ -2,7 +2,7 @@ const db = require('../database/connection')
 
 module.exports = {
     async create(req, resp) {
-        console.log('deu')
+        console.log('entrou')
 
         const {
             email,
@@ -15,6 +15,5 @@ module.exports = {
         }
         const password = await db('users').select('password').where('email', email)
         return resp.status(200).json( password )
-    
     },
 }

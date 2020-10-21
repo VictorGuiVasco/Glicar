@@ -22,9 +22,9 @@ import InsertGlicemia from './src/pages/Glicemia/InsertGlicemia';
 
 //CardapioPages
 import CHorario from './src/pages/Cardapio/Horario';
+import Prato from './src/pages/Cardapio/Prato';
 import ChoosePage from './src/pages/Cardapio/ChoosePage';
 import Porcao from './src/pages/Cardapio/Porcao';
-
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -76,8 +76,15 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false, }} />
         <Stack.Screen name="Senha" component={Senha} options={{ headerShown: false, }} />
         <Stack.Screen name="Cadastro" component={Cadastro} options={{ headerShown: false, }} />
-        <Stack.Screen name="Alarme" component={Alarme} options={{ headerShown: false, }} />
 
+        <Stack.Screen name="Alarme" component={Alarme} options={{
+          title: 'Horario do Alarme',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }} />
+
+        {/* GlicemiaPages */}
         <Stack.Screen name="GHorario" component={GHorario} options={{
           title: 'Horario da Glicemia',
           headerTitleStyle: {
@@ -86,12 +93,14 @@ export default function App() {
         }} />
         <Stack.Screen name="InsertGlicemia" component={InsertGlicemia} options={{ headerShown: false, }} />
 
+        {/* CardapioPages */}
         <Stack.Screen name="CHorario" component={CHorario} options={{
           title: 'Horario da Refeição',
           headerTitleStyle: {
             fontWeight: 'bold',
           },
         }} />
+        <Stack.Screen name="Prato" component={Prato} options={{ headerShown: false, }} />
         <Stack.Screen name="ChoosePage" component={ChoosePage} options={{
           title: 'Faça seu prato',
           headerTitleStyle: {
@@ -99,9 +108,10 @@ export default function App() {
           },
         }} />
         <Stack.Screen name="Porcao" component={Porcao} options={{
-          title: 'Porçoes',
+          title: 'Selecione a Quantidade de Porções',
           headerTitleStyle: {
             fontWeight: 'bold',
+            color: '#42aeff'
           },
         }} />
 

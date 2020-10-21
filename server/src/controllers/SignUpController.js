@@ -2,8 +2,6 @@ const db = require('../database/connection')
 
 module.exports = {
     async create(req, resp) {
-        console.log('deu')
-
         const {
             email,
             senha

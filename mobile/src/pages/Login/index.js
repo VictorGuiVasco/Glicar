@@ -23,7 +23,7 @@ export default function Login() {
     try {
       const response = await api.post('/logon', data)
 
-      console.log(response.data)
+      nav.navigate('Home')
 
     } catch (err) {
       if (err.response) {
@@ -37,7 +37,7 @@ export default function Login() {
     <View style={styles.container}>
       <View style={styles.imageView}>
         <Image
-          source={require('../../assets/login.png')}
+          source={require('../../assets/logo.png')}
           style={styles.logo}
         />
       </View>
@@ -61,19 +61,27 @@ export default function Login() {
 
             onChangeText={(text) => setPassword(text)}
           />
+
+          <TouchableOpacity style={styles.btnSingIn} onPress={() => { nav.navigate('Home') }} >
+            <View>
+              <Text style={styles.TextSingIn} >LOGIN</Text>
+            </View>
+          </TouchableOpacity>
         </View>
 
-        <TouchableOpacity style={styles.btnSingIn} onPress={() => { nav.navigate('Home') }} >
-          <View>
-            <Text style={styles.TextSingIn} >LOGIN</Text>
-          </View>
-        </TouchableOpacity>
+        <View style={styles.signInView} >
+          <TouchableOpacity style={styles.button} onPress={() => { nav.navigate('Wellcome') }} >
+            <View style={styles.btnSenha} >
+              <Text style={styles.btnText} >Cancelar</Text>
+            </View>
+          </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={() => { nav.navigate('Senha') }} >
-          <View style={styles.btnSenha} >
-            <Text style={styles.btnText} >Esqueci minha senha</Text>
-          </View>
-        </TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={() => { nav.navigate('Senha') }} >
+            <View style={styles.btnSenha} >
+              <Text style={styles.btnText} >Esqueci minha senha</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );

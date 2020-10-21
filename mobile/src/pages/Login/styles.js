@@ -6,84 +6,88 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: Constants.statusBarHeight + 10,
-        backgroundColor: '#fff'
-      },
-    
-      logo: {
-        width: 100,
-        height: 100
-      },
-    
-      imageView: {
-        flex: 3,
+        backgroundColor: '#fff',
+        justifyContent: 'space-around'
+    },
+
+    logo: {
+        width: 220,
+        height: 220
+    },
+
+    imageView: {
         alignItems: 'center',
         justifyContent: 'center'
-      },
-    
-      inputView: {
-        flex: 2,
+    },
+
+    inputView: {
         marginHorizontal: 30,
-      },
-    
-      textInput: {
+    },
+
+    textInput: {
         borderRadius: 5,
-    
+
         padding: 12,
         height: 50,
         marginVertical: 5,
-    
+
         fontSize: 15,
-    
+
         backgroundColor: '#EBEBEB',
         color: '#333333',
-      },
-    
-      btnSingIn: {
+    },
+
+    signInView: {
+        flexDirection: 'row',
+        justifyContent: "space-between"
+    },
+
+    btnSingIn: {
         borderRadius: 5,
-    
-        padding: 12,
-        height: 48,
+
+        padding: 15,
+        height: 50,
         marginVertical: 5,
-    
+
         flexDirection: 'row',
         justifyContent: 'center',
-    
-        backgroundColor: '#fff',
-    
+
+        backgroundColor: '#42aeff',
+
         shadowColor: "#000",
         shadowOffset: {
-          width: 0,
-          height: 2,
+            width: 0,
+            height: 2,
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
-    
+
         elevation: 5,
-      },
-    
-      TextSingIn: {
+    },
+
+    TextSingIn: {
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 15,
-    
+
         fontWeight: 'bold',
-        color: '#333'
-      },
-    
-      button: {
+        color: '#FFF'
+    },
+
+    button: {
         height: 30,
         marginVertical: 5
-      },
-    
-      btnSenha: {
+    },
+
+    btnSenha: {
         flex: 1,
         justifyContent: 'center',
-      },
-    
-      btnText: {
+    },
+
+    btnText: {
         fontSize: 14,
         fontWeight: 'bold',
-    
-        color: '#AAA'
-      },
+
+        color: '#808080'
+    },
 })

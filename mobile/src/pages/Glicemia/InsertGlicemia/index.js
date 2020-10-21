@@ -5,32 +5,32 @@ import { useNavigation } from '@react-navigation/native'
 import styles from './styles'
 
 export default function InsertGlicemia() {
-    const nav = useNavigation()
+  const nav = useNavigation()
 
-    function handleRegister() {
-        alert('Glicemia Registrada com sucesso')
-        nav.navigate('Glicemia')
-    }
+  function handleRegister() {
+    alert('Glicemia Registrada com sucesso')
+    nav.navigate('Glicemia')
+  }
 
-    return (
-        <View style={styles.container} >
-            <Text style={styles.text} >Qual o nível</Text>
-            <Text style={styles.text} >de sua glicemia?</Text>
+  return (
+    <View style={styles.container} >
+      <Text style={styles.text} >Qual o nível</Text>
+      <Text style={styles.text} >de glicemia?</Text>
 
-            <TextInput
-                    secureTextEntry={true}
-                    style={styles.textInput}
-                    placeholderTextColor='#777'
-                    keyboardType={'numeric'}
+      <TextInput
+        style={styles.textInput}
+        placeholder='Nível de Glicemia'
+        placeholderTextColor='#777'
+        keyboardType={'numeric'}
 
-                    onChangeText={ () => {} }
-                />
+        onChangeText={() => { }}
+      />
 
-            <TouchableOpacity style={styles.btn} onPress={() => { handleRegister() }}>
-                <View>
-                    <Text style={styles.txtButton} >CONFIRMAR</Text>
-                </View>
-            </TouchableOpacity>
+      <TouchableOpacity style={styles.btn} onPress={() => { handleRegister() }}>
+        <View>
+          <Text style={styles.txtButton} >CONFIRMAR</Text>
         </View>
-    );
+      </TouchableOpacity>
+    </View>
+  );
 }

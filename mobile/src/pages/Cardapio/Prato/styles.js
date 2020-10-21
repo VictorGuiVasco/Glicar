@@ -1,8 +1,10 @@
 import { StyleSheet } from 'react-native'
+import Constants from 'expo-constants'
 
 export default StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: Constants.statusBarHeight + 15,
     backgroundColor: '#fff',
   },
 
@@ -12,6 +14,33 @@ export default StyleSheet.create({
     marginHorizontal: '5%',
     backgroundColor: '#ebebeb',
     borderRadius: 5
+  },
+
+  searchContainer: {
+    borderRadius: 5,
+
+    height: 50,
+    padding: 12,
+
+    fontSize: 15,
+
+    backgroundColor: '#6DDDD0',
+    color: '#fff',
+
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+
+  searchBar: {
+    flex: 1,
+    height: 50,
+    marginLeft: 15,
+    justifyContent: 'center'
+  },
+
+  searchInput:{
+    fontSize: 16,
+    color: '#fff'
   },
 
   footer: {

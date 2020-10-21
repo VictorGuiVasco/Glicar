@@ -12,6 +12,13 @@ export default StyleSheet.create({
         justifyContent: 'space-evenly'
     },
 
+    food: {
+        fontSize: 26,
+        fontWeight: 'bold',
+        textAlign: "center",
+        color: '#7A63FF'
+    },
+
     porcaoContainer: {
         width: '100%',
 
@@ -22,18 +29,18 @@ export default StyleSheet.create({
 
     btn: {
         borderRadius: 5,
-    
-        width: 48,
+
+        width: 50,
         height: 48,
         padding: 15,
-       
+
         shadowOffset: {
-          width: 0,
-          height: 2,
+            width: 0,
+            height: 2,
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
-    
+
         elevation: 5,
         shadowColor: "#000",
         backgroundColor: '#fff'
@@ -43,15 +50,15 @@ export default StyleSheet.create({
         width: '70%',
         borderRadius: 5,
 
-        padding: 12,
-        height: 45,
+        padding: 15,
+        height: 50,
         marginTop: 5,
         marginVertical: 8,
 
         flexDirection: 'row',
         justifyContent: 'center',
 
-        backgroundColor: '#fff',
+        backgroundColor: '#42AEFF',
 
         shadowColor: "#000",
         shadowOffset: {
@@ -63,4 +70,10 @@ export default StyleSheet.create({
 
         elevation: 5,
     },
+
+    textButton: {
+        fontWeight: 'bold',
+        fontSize: 16,
+        color: '#fff'
+    }
 })

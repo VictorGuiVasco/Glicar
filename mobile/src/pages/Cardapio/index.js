@@ -10,22 +10,20 @@ export default function Cardapio() {
   return (
     <View style={styles.container} >
       <View style={styles.tituloContainer}>
-        <Text style={styles.titulo}>CARDAPIO</Text>
+        <Text style={styles.titulo}>Horário da Refeição</Text>
       </View>
 
       <View style={styles.glicContainer} >
-        <Text style={styles.text} >Horario da refeição</Text>
-
-        <TouchableOpacity style={styles.btn} onPress={() => { nav.navigate('ChoosePage') }}>
+        <TouchableOpacity style={styles.nowButton} onPress={() => { nav.navigate('Prato') }}>
           <View>
             <Text style={styles.txtButton} >AGORA</Text>
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.btn} onPress={() => { nav.navigate('CHorario') }}>
+        <TouchableOpacity style={styles.afterButton} onPress={() => { nav.navigate('CHorario') }}>
           <View>
-            <Text style={styles.txtButton} >REFEIÇÃO PASSADA</Text>
-          </View>
+            <Text style={styles.txtButton} >COMI ANTES</Text>
+          </View> 
         </TouchableOpacity>
       </View>
     </View>

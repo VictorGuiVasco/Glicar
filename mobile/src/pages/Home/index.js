@@ -2,6 +2,9 @@ import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+import Table from '../../components/DataTable/home'
+import LineChart from '../../components/LineChart/gliChart'
+import CHOChart from '../../components/LineChart/choChart'
 
 import styles from './styles'
 
@@ -10,26 +13,20 @@ export default function Home() {
 
   return (
     <View style={styles.container} >
-      <View style={styles.graficContainer}>
-        <View style={styles.grafic}>
-          <Text>GRAFICO GLICEMIA</Text>
-        </View>
-
-        <View style={styles.grafic}>
-          <Text>GRAFICO CHO</Text>
-        </View>
-      </View>
+      <Text style={styles.titulo} >Gráficos</Text>
+      <LineChart />
+      <CHOChart />
 
       <View style={styles.foodContainer}>
-        <Text>ALIMENTOS</Text>
+        <Table />
       </View>
 
-      <TouchableOpacity style={styles.btn} onPress={() => { nav.navigate('Alarme') }}>
-          <View>
-            <Text style={styles.txtButton} >MARCAR ALARME</Text>
-          </View>
-        </TouchableOpacity>
-
+      {/* <TouchableOpacity style={styles.btn} onPress={() => { nav.navigate('Alarme') }}>
+        <View>
+          <Text style={styles.txtButton} >MARCAR ALARME</Text>
+        </View>
+      </TouchableOpacity>
+      */}
     </View>
   );
 }

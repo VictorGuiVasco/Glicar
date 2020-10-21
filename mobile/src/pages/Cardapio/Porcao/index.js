@@ -1,35 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import styles from './styles'
-
 export default function Porcao() {
   const nav = useNavigation()
+
+  const [number, setNumber] = useState(1)
 
   return (
     <View style={styles.container}>
       <View>
-        <Text style={{ fontSize: 18, fontWeight: "bold" }} >ALIMENTO ESCOLHIDO</Text>
+        <Text style={styles.food} >Arroz cozido Branco</Text>
       </View>
-
-
+      
       <View style={styles.porcaoContainer} >
-        <TouchableOpacity style={styles.btn} onPress={() => { nav.navigate('Porcao') }}>
-          <View style={{ alignItems: 'center' }} >
-            <Icon
-              name='add'
-              color='#000'
-              size={18}
-            />
-          </View>
-        </TouchableOpacity>
-
-        <Text style={{ fontSize: 24 }} >0</Text>
-
-        <TouchableOpacity style={styles.btn} onPress={() => { nav.navigate('Porcao') }}>
+        <TouchableOpacity style={styles.btn} onPress={() => setNumber(number - 0.25)}>
           <View style={{ alignItems: 'center' }} >
             <Icon
               name='remove'
@@ -39,16 +27,24 @@ export default function Porcao() {
           </View>
         </TouchableOpacity>
 
-      </View>
-        <Text>Tipos de porções</Text>
-      <View>
+        <Text style={{ fontSize: 24 }} >{number} x 31g</Text>
+
+        <TouchableOpacity style={styles.btn} onPress={() => setNumber(number + 0.25)}>
+          <View style={{ alignItems: 'center' }} >
+            <Icon
+              name='add'
+              color='#000'
+              size={18}
+            />
+          </View>
+        </TouchableOpacity>
 
       </View>
-      <TouchableOpacity style={styles.btnAvancar} onPress={() => { nav.navigate('ChoosePage') }}>
-        <View>
-          <Text style={styles.txtButton} >AVANÇAR</Text>
-        </View>
-      </TouchableOpacity>
+        <TouchableOpacity style={styles.btnAvancar} onPress={() => { nav.navigate('Prato') }}>
+          <View>
+            <Text style={styles.textButton} >AVANÇAR</Text>
+          </View>
+        </TouchableOpacity>
       <View>
 
       </View>

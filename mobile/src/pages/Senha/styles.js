@@ -1,21 +1,28 @@
 import { StyleSheet } from 'react-native'
 
 import Constants from 'expo-constants'
+import { MaskedViewBase } from '@react-native-community/masked-view'
 
 export default StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: Constants.statusBarHeight + 15,
     backgroundColor: '#fff',
-    paddingTop: Constants.statusBarHeight + 35,
+    justifyContent: "space-around"
+  },
 
-    alignItems: 'center',
+  imageView: {
+    marginLeft: 30,
     justifyContent: 'center'
   },
 
-  text: {
-    fontSize: 28,
+  titulo: {
+    fontSize:43,
     fontWeight: 'bold',
-    color: '#7A63FF',
+    textAlign: 'left',
+    color: '#42AEFF',
+
+    maxWidth: 250
   },
 
   textInput: {
@@ -23,25 +30,22 @@ export default StyleSheet.create({
 
     padding: 12,
     height: 50,
-
-    width: '70%',
-    marginTop: 15,
-    marginVertical: 7,
+    marginHorizontal: 30,
+    marginVertical: 5,
 
     fontSize: 15,
 
-    color: '#333333',
     backgroundColor: '#EBEBEB',
+    color: '#333333',
   },
 
-  btn: {
-    width: '70%',
+  button: {
     borderRadius: 5,
 
     padding: 15,
     height: 50,
-    marginTop: 10,
-    marginVertical: 8,
+    marginHorizontal: 30,
+    marginVertical: 5,
 
     flexDirection: 'row',
     justifyContent: 'center',
@@ -59,12 +63,12 @@ export default StyleSheet.create({
     elevation: 5,
   },
 
-  txtButton: {
+  btnText: {
     justifyContent: 'center',
     alignItems: 'center',
     fontSize: 15,
 
     fontWeight: 'bold',
-    color: '#fff'
+    color: '#FFF'
   },
 })

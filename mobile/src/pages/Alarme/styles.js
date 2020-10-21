@@ -6,13 +6,47 @@ export default StyleSheet.create({
         backgroundColor: '#fff',
 
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'space-evenly'
+    },
+
+    dateTimeContainer: {
+        alignItems: 'center'
+    },
+
+    textInput: {
+        borderRadius: 5,
+
+        width: '50%',
+        height: 180,
+        marginHorizontal: '7%',
+        marginVertical: 7,
+
+        backgroundColor: '#EBEBEB',
+        color: '#333333',
+        alignItems: 'center'
+    },
+
+    textDate: {
+        borderRadius: 5,
+        fontSize: 20,
+
+        paddingVertical: 3,
+        textAlign: "center",
+
+        color: '#fff',
+        backgroundColor: '#7A63FF'
+    },
+
+    textDay: {
+        fontSize: 100,
+        paddingVertical: 3,
+        color: '#42AEFF',
     },
 
     text: {
-        fontSize: 18,
-        marginBottom: 8,
-        textDecorationLine: 'underline'
+        fontSize: 20,
+        marginVertical: 8,
+        color: '#42AEFF',
     },
 
     btn: {
@@ -21,13 +55,13 @@ export default StyleSheet.create({
 
         padding: 12,
         height: 45,
-        marginTop: 5,
+        marginTop: 50,
         marginVertical: 8,
 
         flexDirection: 'row',
         justifyContent: 'center',
 
-        backgroundColor: '#fff',
+        backgroundColor: '#7A63FF',
 
         shadowColor: "#000",
         shadowOffset: {
@@ -41,7 +75,7 @@ export default StyleSheet.create({
     },
 
     txtButton: {
-        color: '#333',
+        color: '#fff',
         fontSize: 15,
         fontWeight: 'bold',
 
