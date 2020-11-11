@@ -33,7 +33,7 @@ export default function Horario() {
       </View>
 
 
-      <TouchableOpacity style={styles.btn} onPress={() => { nav.navigate('ChoosePage') }}>
+      <TouchableOpacity style={styles.btn} onPress={() => { nav.navigate('Prato') }}>
         <View>
           <Text style={styles.txtButton} >AVANÇAR</Text>
         </View>

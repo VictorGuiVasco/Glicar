@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import { View, Text, TextInput, Picker, TouchableOpacity, KeyboardAvoidingView, Image, ScrollView } from 'react-native';
+import { View, Text, TextInput, Picker, TouchableOpacity, Image, ScrollView, KeyboardAvoidingView, Alert } from 'react-native';
 
 import styles from './styles'
 import api from '../../services/api'
@@ -25,19 +25,22 @@ export default function Cadastro() {
 
     if (Valida(data)) {
       try {
-        console.log(data)
         await api.post('/users', data)
 
-        alert('Cadastro efeituado com sucesso')
-        nav.navigate('Wellcome')
+        Alert.alert(
+          'Sucesso',
+          'Registro feito com sucesso',
+          [
+            { text: 'OK', onPress: () =>  { nav.navigate('Wellcome')} }
+          ],
+          { cancelable: false }
+        )
       } catch (err) {
-
         if (err.response) {
           var error = err.response.data
           alert(error.error);
         }
       }
-
     } else {
       alert('Preencha os campos corretamente')
     }
@@ -64,7 +67,7 @@ export default function Cadastro() {
 
   const onChange = (event, date) => {
     setShow(Platform.OS === 'ios');
-    setDtNasc(date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear());
+    setDtNasc(date.getDate() + '-' + date.getMonth() + '-' + date.getFullYear());
   };
 
   return (
@@ -77,14 +80,11 @@ export default function Cadastro() {
         />
       </View>
 
-
-      <ScrollView style={styles.inputView} showsVerticalScrollIndicator={false}>
-
+      <ScrollView style={styles.inputView} behavior={'padding'} /* showsVerticalScrollIndicator={false} */>
         <TextInput
           style={styles.textInput}
           placeholder={"Nome"}
           placeholderTextColor='#777'
-          autoFocus={true}
 
           onChangeText={(text) => setName(text)}
         />
@@ -116,6 +116,7 @@ export default function Cadastro() {
           <Picker
             selectedValue={sexo}
             style={styles.pickerSexo}
+            
 
             onValueChange={(item, index) => setSexo(item)}
           >
@@ -140,8 +141,6 @@ export default function Cadastro() {
 
           onChangeText={(text) => setAltura(text)}
         />
-
-
       </ScrollView >
 
       <View style={styles.signUpView} >
@@ -151,8 +150,6 @@ export default function Cadastro() {
           </View>
         </TouchableOpacity>
       </View>
-
-
 
       {show && (
         <DateTimePicker

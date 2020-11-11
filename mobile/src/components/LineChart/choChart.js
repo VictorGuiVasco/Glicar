@@ -6,7 +6,7 @@ export default function LineChart() {
   return (
     <View style={styles.container} >
       <VictoryChart width={350} height={250} domainPadding={100} name='CHO' theme={VictoryTheme.material}>
-      <Text style={styles.title} >CHO</Text>
+      
         <VictoryBar 
           style={{
             data: { fill: "#42AEFF" },
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    marginLeft: 12,
+    paddingLeft: 12,
     paddingTop: 12,
     fontWeight: 'bold',
   },

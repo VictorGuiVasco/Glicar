@@ -44,7 +44,7 @@ export default StyleSheet.create({
   },
 
   text: {
-    fontSize: 20,
+    fontSize: 24,
     marginVertical: 8,
     color: '#42AEFF',
   },

@@ -1,11 +1,25 @@
-import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, Picker } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import styles from './styles'
 
 export default function Glicemia() {
   const nav = useNavigation();
+
+  const[data, setData] = useState(new Date().toLocaleDateString())
+  const[horario, setHorario] = useState(new Date().toLocaleTimeString())
+
+  function handleDate(){
+    const date = new Date()
+    
+    setData(date.toLocaleDateString())
+    setHorario(date.toLocaleTimeString())
+
+    alert(data + ' ' + horario)
+
+    nav.navigate('InsertGlicemia', {data, horario})
+  }
 
   return (
     <View style={styles.container} >
@@ -14,7 +28,7 @@ export default function Glicemia() {
       </View> 
 
       <View style={styles.glicContainer} >
-        <TouchableOpacity style={styles.nowButton} onPress={() => { nav.navigate('InsertGlicemia') }}>
+        <TouchableOpacity style={styles.nowButton} onPress={() => handleDate() }>
           <View>
             <Text style={styles.txtButton} >AGORA</Text>
           </View>

@@ -27,7 +27,8 @@ export default StyleSheet.create({
     },
 
     inputView: {
-        paddingVertical: '20%',
+        flex: 1,
+        marginTop: '10%'
     },
 
     textInput: {
@@ -50,8 +51,8 @@ export default StyleSheet.create({
     },
 
     signUpView: {
-        height: '15%',
-        marginTop: 5
+        height: '20%',
+        paddingTop: 10
     },
 
     btnSignUp: {

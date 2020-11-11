@@ -1,15 +1,34 @@
-import React from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
 
 import styles from './styles'
+import api from '../../../services/api'
 
-export default function InsertGlicemia() {
+export default function InsertGlicemia({ route, navigation }) {
   const nav = useNavigation()
 
-  function handleRegister() {
-    alert('Glicemia Registrada com sucesso')
-    nav.navigate('Glicemia')
+  const [glic, setGlic] = useState('')
+
+  const { data, horario } = route.params;
+  const datehours = data + ' ' + horario
+  var user_id = 1
+
+  async function handleRegister() {
+    try {
+      await api.post('/glicemia', { glic, datehours, user_id})
+
+      Alert.alert(
+        'Sucesso',
+        'Registro feito com sucesso',
+        [
+          { text: 'OK', onPress: () =>  { nav.navigate('Glicemia')} }
+        ],
+        { cancelable: false }
+      )
+    } catch (err) {
+      return resp.status(400).json({ error: 'Unexpected error while creating new class.' });
+    }
   }
 
   return (
@@ -23,7 +42,7 @@ export default function InsertGlicemia() {
         placeholderTextColor='#777'
         keyboardType={'numeric'}
 
-        onChangeText={() => { }}
+        onChangeText={(text) => { setGlic(text) }}
       />
 
       <TouchableOpacity style={styles.btn} onPress={() => { handleRegister() }}>

@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Text, View, TextInput, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import api from '../../services/api'
+import UserData from '../../utils/userData'
 
 import styles from './styles'
+import api from '../../services/api'
 
 export default function Login() {
   const nav = useNavigation();
@@ -12,9 +13,7 @@ export default function Login() {
   const [email, setEmail] = useState('')
   const [senha, setPassword] = useState('')
 
-  //Enviar email e senha pro backend
   async function handleSignIn() {
-
     const data = {
       email,
       senha
@@ -24,7 +23,6 @@ export default function Login() {
       const response = await api.post('/logon', data)
 
       nav.navigate('Home')
-
     } catch (err) {
       if (err.response) {
         var error = err.response.data

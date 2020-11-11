@@ -2,23 +2,26 @@ const db = require('../database/connection')
 
 module.exports = {
   async create(req, resp) {
-
     const {
       email,
-      password
+      senha
     } = req.body
 
-    try { 
+    try {
       const userEmail = await db('users').select('email').where('email', email)
       if (!userEmail.length >= 1) {
         console.log('Email não existe')
         return resp.status(401).json({ error: 'Informe um email existente' });
       }
-      await db('users').update('password', password).where('email', email)
 
-      return resp.status(200)
+      const userPassword = await db('users').select('password').where('email', email)
+      const password = userPassword[userPassword.length - 1]
+      if (senha == password.password) {
+        const user = await db('users').select('*').where('email', email)
+
+        return resp.status(200).json(user[0])
+      } else return resp.status(401).json({ error: 'senha errada' })
     } catch (err) {
-      console.log(err)
       return resp.status(401).json({ error: 'Erro ao fazer a requizição' });
     }
 

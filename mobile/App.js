@@ -33,15 +33,15 @@ const icons = {
   Home: {
     name: 'ios-home'
   },
-  Perfil: {
-    name: 'ios-people'
-  },
   Cardapio: {
-    name: 'ios-menu'
+    name: 'ios-restaurant'
   },
   Glicemia: {
     name: 'ios-heart'
-  }
+  },
+  Perfil: {
+    name: 'ios-people'
+  },
 };
 
 function Tabs() {
@@ -61,9 +61,9 @@ function Tabs() {
       }}
     >
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Perfil" component={Perfil} />
       <Tab.Screen name="Cardapio" component={Cardapio} />
       <Tab.Screen name="Glicemia" component={Glicemia} />
+      <Tab.Screen name="Perfil" component={Perfil} />
     </Tab.Navigator>
   );
 }

@@ -1,19 +1,38 @@
 import React, { useState } from 'react';
-import { Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import styles from './styles'
-
 import api from '../../services/api'
 
 export default function Senha() {
+  const nav = useNavigation();
+
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirm, setConfirm] = useState('')
 
   async function handleRequestPassword() {
+    const data = {
+      email,
+      password
+    }
+
+    if(confirm != password)
+      return alert('Senhas diferentes')
 
     try {
-      const response = await api.post('/password', email)
+      await api.post('/password', data)
 
-      alert(response.data)
-
+      Alert.alert(
+        'Sucesso',
+        'Registro feito com sucesso',
+        [
+          { text: 'OK', onPress: () =>  { nav.navigate('Login')} }
+        ],
+        { cancelable: false }
+      )
+      
     } catch (err) {
       if (err.response) {
         var error = err.response.data
@@ -21,8 +40,6 @@ export default function Senha() {
       }
     }
   }
-
-  const [email, setEmail] = useState('')
 
   return (
     <View style={styles.container}>
@@ -46,7 +63,7 @@ export default function Senha() {
           secureTextEntry={true}
           placeholderTextColor='#777'
 
-          onChangeText={(text) => setEmail(text)}
+          onChangeText={(text) => setPassword(text)}
         />
 
         <TextInput
@@ -55,7 +72,7 @@ export default function Senha() {
           secureTextEntry={true}
           placeholderTextColor='#777'
 
-          onChangeText={(text) => setEmail(text)}
+          onChangeText={(text) => setConfirm(text)}
         />
 
         <TouchableOpacity style={styles.button} onPress={() => handleRequestPassword()} >

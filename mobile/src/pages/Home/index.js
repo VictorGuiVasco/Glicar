@@ -13,9 +13,7 @@ export default function Home() {
 
   return (
     <View style={styles.container} >
-      <Text style={styles.titulo} >Gráficos</Text>
       <LineChart />
-      <CHOChart />
 
       <View style={styles.foodContainer}>
         <Table />
