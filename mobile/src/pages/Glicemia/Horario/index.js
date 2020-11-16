@@ -10,12 +10,12 @@ export default function Horario() {
   const nav = useNavigation()
 
   const [layerDate, setLayerDate] = useState(new Date().getDate())
-  const [horario, setHorario] = useState(new Date().toLocaleTimeString())
+  const [hours, setHorario] = useState(new Date().toLocaleTimeString())
 
   const [showDate, setShow] = useState(false);
   const [showTime, setShowT] = useState(false);
 
-  const [data, setData] = useState(new Date().getDate())
+  const [date, setData] = useState(new Date().getDate())
   const [mode, setMode] = useState('date')
 
   const onChange = (event, date) => {
@@ -54,13 +54,13 @@ export default function Horario() {
 
         <TouchableOpacity onPress={() => { showModeT('time'); }}>
           <View>
-            <Text style={styles.text} > Ás {horario} </Text>
+            <Text style={styles.text} > Ás {hours} </Text>
           </View>
         </TouchableOpacity>
       </View>
 
 
-      <TouchableOpacity style={styles.btn} onPress={() => { nav.navigate('InsertGlicemia', { data, horario }) }}>
+      <TouchableOpacity style={styles.btn} onPress={() => { nav.navigate('InsertGlicemia', { date, hours }) }}>
         <View>
           <Text style={styles.txtButton} >AVANÇAR</Text>
         </View>

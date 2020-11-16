@@ -1,31 +1,66 @@
-import React from 'react';
-import { DataTable } from 'react-native-paper';
+import React, { useState } from 'react';
+import { StyleSheet } from 'react-native';
+import { Table, Rows } from 'react-native-table-component';
 import { useNavigation } from '@react-navigation/native'
 
-import styles from './styles'
-
-export default function Table() {
+export default function ExampleFour() {
   const nav = useNavigation()
 
+  const tableData =
+    [
+      ['Amido de arroz'],
+      ['Arroz Branco Cozido'],
+      ['Arroz carreteiro'],
+      ['Arroz doce'],
+      ['Arroz integral cozido'],
+    ]
+
   return (
-    <DataTable style={styles.table} >
-      <DataTable.Header style={styles.cell}>
-        <DataTable.Title >Food</DataTable.Title>
-        <DataTable.Title numeric>Porção</DataTable.Title>
-        <DataTable.Title numeric>CHO</DataTable.Title>
-      </DataTable.Header>
-
-      <DataTable.Row style={styles.cell} >
-        <DataTable.Cell  >Arroz Branco</DataTable.Cell>
-        <DataTable.Cell numeric>1.5</DataTable.Cell>
-        <DataTable.Cell numeric>47.5g</DataTable.Cell>
-      </DataTable.Row>
-
-      <DataTable.Row style={styles.cell} >
-        <DataTable.Cell>Frango Cozido</DataTable.Cell>
-        <DataTable.Cell numeric>1</DataTable.Cell>
-        <DataTable.Cell numeric>0g</DataTable.Cell>
-      </DataTable.Row>
-    </DataTable>
+    <Table borderStyle={{ borderColor: 'transparent' }} >
+      <Rows data={tableData} textStyle={styles.textRow} style={styles.row} />
+    </Table>
   )
 }
+
+const styles = StyleSheet.create({
+  tableContainer: {
+    borderWidth: 2,
+    borderRadius: 5,
+    borderColor: '#6dddd0',
+  },
+
+  head: {
+    height: 40,
+    backgroundColor: '#ebebeb',
+  },
+
+  row: {
+    height: 50,
+    backgroundColor: '#ebebeb',
+
+    borderBottomWidth: 0.5,
+    borderColor: '#ddd'
+  },
+
+  textHead: {
+    fontSize: 13,
+    padding: '5%',
+    color: '#777'
+  },
+
+  textRow: {
+    fontSize: 14,
+    padding: '5%',
+  },
+
+  button: {
+    padding: '5%',
+    alignItems: 'flex-end',
+  },
+
+  btnText: {
+    color: '#000',
+    fontWeight: 'bold'
+  }
+
+})

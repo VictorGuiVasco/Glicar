@@ -5,10 +5,9 @@ import Constants from 'expo-constants'
 export default StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
+        paddingHorizontal: 10,
         paddingTop: Constants.statusBarHeight + 15,
         backgroundColor: '#fff',
-        justifyContent: "space-between"
     },
 
     titulo: {
@@ -18,29 +17,19 @@ export default StyleSheet.create({
         color: '#7A63FF',
     },
 
-    graficContainer: {
-        flex: 1,
-        paddingBottom: 20,
-        marginHorizontal: '5%',
-        justifyContent: 'space-evenly',
+    text: {
+        marginVertical: 5
     },
 
     foodContainer: {
-        width: '86%',
-        justifyContent: 'center',
+        flex: 1,
+        width: '100%',
         marginBottom: 20,
 
         borderWidth: 2,
         borderRadius: 5,
         borderColor: '#6DDDD0',
-    },
-
-    grafic: {
-        height: '48%',
-        borderWidth: 0.5,
-
-        alignItems: 'center',
-        justifyContent: 'center'
+        backgroundColor: '#ebebeb'
     },
 
     btn: {

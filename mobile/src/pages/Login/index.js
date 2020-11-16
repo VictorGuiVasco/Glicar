@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { Text, View, TextInput, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import UserData from '../../utils/userData'
-
 import styles from './styles'
 import api from '../../services/api'
 

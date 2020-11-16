@@ -1,9 +1,11 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native'
 
 import styles from './styles'
 
 export default function Perfil() {
+  const nav = useNavigation()
   return (
     <View style={styles.container}>
       <View style={styles.userView}>
@@ -39,7 +41,7 @@ export default function Perfil() {
       </View>
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.signUpButton} onPress={() => { nav.navigate('Cadastro') }} >
+        <TouchableOpacity style={styles.signUpButton} onPress={() => { nav.navigate('Alarme') }} >
           <View>
             <Text style={styles.textButton} >
               MARCAR ALARME

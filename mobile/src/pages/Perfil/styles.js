@@ -35,12 +35,12 @@ export default StyleSheet.create({
 
   userData: {
     flex: 3,
-    borderRadius: 90,
+    borderRadius: 32,
 
     borderBottomEndRadius: 0,
     borderBottomStartRadius: 0,
     backgroundColor: '#fff',
-    paddingTop: 50,
+    paddingTop: 20,
 
     paddingHorizontal: 30,
   },

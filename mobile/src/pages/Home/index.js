@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { View, Text, ScrollView } from 'react-native';
 
 import Table from '../../components/DataTable/home'
 import LineChart from '../../components/LineChart/gliChart'
@@ -9,22 +8,17 @@ import CHOChart from '../../components/LineChart/choChart'
 import styles from './styles'
 
 export default function Home() {
-  const nav = useNavigation();
 
   return (
-    <View style={styles.container} >
+    <View style={styles.container}  >
+      <Text style={styles.titulo} >Home</Text>
+    
       <LineChart />
 
-      <View style={styles.foodContainer}>
+      <Text style={styles.text} >Alimentos</Text>
+      <ScrollView style={styles.foodContainer}>
         <Table />
-      </View>
-
-      {/* <TouchableOpacity style={styles.btn} onPress={() => { nav.navigate('Alarme') }}>
-        <View>
-          <Text style={styles.txtButton} >MARCAR ALARME</Text>
-        </View>
-      </TouchableOpacity>
-      */}
+      </ScrollView>
     </View>
   );
 }

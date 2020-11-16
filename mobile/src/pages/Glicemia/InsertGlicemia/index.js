@@ -10,13 +10,12 @@ export default function InsertGlicemia({ route, navigation }) {
 
   const [glic, setGlic] = useState('')
 
-  const { data, horario } = route.params;
-  const datehours = data + ' ' + horario
+  const { date, hours } = route.params;
   var user_id = 1
 
   async function handleRegister() {
     try {
-      await api.post('/glicemia', { glic, datehours, user_id})
+      await api.post('/glicemia', { glic, date, hours, user_id})
 
       Alert.alert(
         'Sucesso',

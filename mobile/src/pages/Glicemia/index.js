@@ -7,18 +7,16 @@ import styles from './styles'
 export default function Glicemia() {
   const nav = useNavigation();
 
-  const[data, setData] = useState(new Date().toLocaleDateString())
-  const[horario, setHorario] = useState(new Date().toLocaleTimeString())
+  const[date, setData] = useState(new Date().toLocaleDateString())
+  const[hours, setHorario] = useState(new Date().toLocaleTimeString())
 
   function handleDate(){
-    const date = new Date()
+    const time = new Date()
     
-    setData(date.toLocaleDateString())
-    setHorario(date.toLocaleTimeString())
+    setData(time.toLocaleDateString())
+    setHorario(time.toLocaleTimeString())
 
-    alert(data + ' ' + horario)
-
-    nav.navigate('InsertGlicemia', {data, horario})
+    nav.navigate('InsertGlicemia', {date, hours})
   }
 
   return (

@@ -1,58 +1,51 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text } from "react-native";
-import { VictoryLine, VictoryChart, VictoryAxis, VictoryZoomContainer, VictoryBrushContainer } from "victory-native";
+import { VictoryLine, VictoryChart, VictoryZoomContainer } from "victory-native";
 
-export default class App extends React.Component {
+import api from '../../services/api'
 
-  constructor() {
-    super();
-    this.state = {};
+export default function App() {
+
+  const [data, setData] = useState([])
+
+  async function loadData() {
+    const response = await api.get('/glicemia');
+
+    setData(response.data)
+    console.log(data)
   }
 
-  handleZoom(domain) {
-    this.setState({ selectedDomain: domain });
-  }
+  useEffect(() => {
+    loadData();
+  }, []);
 
-  handleBrush(domain) {
-    this.setState({ zoomDomain: domain });
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <VictoryChart
-          width={380}
-          height={250}
-          scale={{ x: "time" }}
-          containerComponent={
-            <VictoryZoomContainer responsive={false}
-              zoomDimension="x"
-              zoomDomain={this.state.zoomDomain}
-              onZoomDomainChange={this.handleZoom.bind(this)}
-            />
-          }
-        >
-          <VictoryLine
-            style={{
-              data: { stroke: "#42AEFF" }
-            }}
-            data={[
-              { x: new Date(1982, 1, 1), y: 130 },
-              { x: new Date(1987, 1, 1), y: 257 },
-              { x: new Date(1993, 1, 1), y: 345 },
-              { x: new Date(1997, 1, 1), y: 515 },
-              { x: new Date(2001, 1, 1), y: 132 },
-              { x: new Date(2005, 1, 1), y: 305 },
-              { x: new Date(2011, 1, 1), y: 270 },
-              { x: new Date(2015, 1, 1), y: 470 }
-            ]}
+  return (
+    <View style={styles.container}>
+      
+      <Text style={styles.title} >Glicemia</Text>
+      <VictoryChart
+        width={390}
+        height={250}
+        scale={{ x: "time" }}
+        domainPadding={{ y: [0, 25] }}
+        containerComponent={
+          <VictoryZoomContainer responsive={false}
+            zoomDimension="x"
           />
+        }
+      >
+        <VictoryLine
+          style={{
+            data: { stroke: "#42AEFF" }
+          }}
+          data={data}
+          x='date' y='glic'
+          labels={({ datum }) => datum.y}
+        />
+      </VictoryChart>
+    </View>
+  );
 
-
-        </VictoryChart>
-      </View>
-    );
-  }
 }
 
 const styles = StyleSheet.create({
@@ -61,7 +54,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderColor: '#6DDDD0',
     marginBottom: 5,
-    marginHorizontal: '5%',
   },
 
   title: {

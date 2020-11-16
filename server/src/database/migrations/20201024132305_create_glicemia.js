@@ -2,7 +2,8 @@ exports.up = function(knex) {
     return knex.schema.createTable('glicemia', (table) => {
         table.increments()
         table.decimal('glic').notNullable()
-        table.date('datehours').notNullable()
+        table.date('date').notNullable()
+        table.time('hours').notNullable()
 
         table.integer('user_id').notNullable()
 
