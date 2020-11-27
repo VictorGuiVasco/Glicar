@@ -9,7 +9,7 @@ import SearchBar from '../../../components/SearchBar'
 
 import styles from './styles'
 
-export default function Prato() {
+export default function Prato({ route, navigation }) {
   const nav = useNavigation()
 
   function handleRegister() {

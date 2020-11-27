@@ -10,15 +10,21 @@ export default function ExampleFour() {
 
   const tableData =
     [
-      ['Amido de arroz', '0'],
-      ['Arroz Branco Cozido', '1'],
-      ['Arroz carreteiro', '2'],
-      ['Arroz doce', '3'],
-      ['Arroz integral cozido', '4'],
+      ['Alface americana', '1,7'],
+      ['Alface crespa', '1,7'],
+      ['Alface lisa', '2,4'],
+      ['Alface roxa', '2,5'],
+      ['Arroz integral', '25,8'],
+      ['Feijão carioca cozido', '0,87'],
+      ['Peito de frango', '0'],
     ]
 
+    function aa(data) { 
+      alert(data)
+    }
+
   const element = (data, index) => (
-    <TouchableOpacity style={styles.button} onPress={() => {nav.navigate('Porcao')}}>
+    <TouchableOpacity style={styles.button} onPress={() => { nav.navigate('Porcao') }}>
       <View>
         <Icon
           name='arrow-forward'

@@ -6,28 +6,35 @@ import api from '../../services/api'
 
 export default function App() {
 
-  const [data, setData] = useState([])
+  const [data, setData] = useState([
+    {date: '01/11', glic: 100},
+    {date: '02/11', glic: 120},
+    {date: '03/11', glic: 140},
+    {date: '04/11', glic: 110},
+    {date: '05/11', glic: 100},
+    {date: '06/11', glic: 180},
+  ])
 
-  async function loadData() {
-    const response = await api.get('/glicemia');
+  /* useEffect(() => {
+    async function loadData() {
+      const response = await api.get('/glicemia');
 
-    setData(response.data)
-    console.log(data)
-  }
+      setData(response.data)
+      console.log(data)
+    }
 
-  useEffect(() => {
     loadData();
-  }, []);
+  }, [setData]) */
 
   return (
     <View style={styles.container}>
-      
+
       <Text style={styles.title} >Glicemia</Text>
       <VictoryChart
         width={390}
         height={250}
         scale={{ x: "time" }}
-        domainPadding={{ y: [0, 25] }}
+        domainPadding={{ y: [5, 25] }}
         containerComponent={
           <VictoryZoomContainer responsive={false}
             zoomDimension="x"

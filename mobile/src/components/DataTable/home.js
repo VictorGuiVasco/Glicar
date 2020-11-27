@@ -8,11 +8,10 @@ export default function ExampleFour() {
 
   const tableData =
     [
-      ['Amido de arroz'],
-      ['Arroz Branco Cozido'],
-      ['Arroz carreteiro'],
-      ['Arroz doce'],
-      ['Arroz integral cozido'],
+      ['Alface crespa'],
+      ['Arroz Integral'],
+      ['Feijao carioca cozido'],
+      ['Peito de frango assado'],
     ]
 
   return (

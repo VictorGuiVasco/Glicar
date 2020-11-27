@@ -8,7 +8,9 @@ export default function ExampleFour() {
 
   const tableData =
     [
-      ['Amido cozido','1.5 x Unidade Basica (45.7g)', 1.5],
+      ['Alface crespa','1 x Unidade Basica (1,7g)', 1.5],
+      ['Arroz integral','1.5 x Unidade Basica (38,7g)',  1],
+      ['Feijao carioca','1 x Unidade Basica (0,87g)',  1],
       ['Frango Cozido','1 x Unidade Basica (0g)',  1],
     ]
 

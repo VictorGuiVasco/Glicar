@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import styles from './styles'
-export default function Porcao() {
+export default function Porcao({ route, navigation }) {
   const nav = useNavigation()
 
   const [number, setNumber] = useState(1)
@@ -13,9 +13,9 @@ export default function Porcao() {
   return (
     <View style={styles.container}>
       <View>
-        <Text style={styles.food} >Arroz cozido Branco</Text>
+        <Text style={styles.food} >Arroz Integral</Text>
       </View>
-      
+
       <View style={styles.porcaoContainer} >
         <TouchableOpacity style={styles.btn} onPress={() => setNumber(number - 0.25)}>
           <View style={{ alignItems: 'center' }} >
@@ -27,7 +27,7 @@ export default function Porcao() {
           </View>
         </TouchableOpacity>
 
-        <Text style={{ fontSize: 24 }} >{number} x 31g</Text>
+        <Text style={{ fontSize: 24 }} >{number}  x  25,8g</Text>
 
         <TouchableOpacity style={styles.btn} onPress={() => setNumber(number + 0.25)}>
           <View style={{ alignItems: 'center' }} >
@@ -38,13 +38,14 @@ export default function Porcao() {
             />
           </View>
         </TouchableOpacity>
-
       </View>
-        <TouchableOpacity style={styles.btnAvancar} onPress={() => { nav.navigate('Prato') }}>
-          <View>
-            <Text style={styles.textButton} >AVANÇAR</Text>
-          </View>
-        </TouchableOpacity>
+
+      <Text>100g por porção</Text>
+      <TouchableOpacity style={styles.btnAvancar} onPress={() => { nav.navigate('Prato') }}>
+        <View>
+          <Text style={styles.textButton} >AVANÇAR</Text>
+        </View>
+      </TouchableOpacity>
       <View>
 
       </View>

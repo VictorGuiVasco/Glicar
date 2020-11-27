@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
-const data = new Date()
-
 import { useNavigation } from '@react-navigation/native'
 
 import styles from './styles'
@@ -11,12 +9,36 @@ import styles from './styles'
 export default function Horario() {
   const nav = useNavigation()
 
-  const [dtnasc, setDtNasc] = useState('Dia que comeu')
-  const [show, setShow] = useState(false);
+  const [layerDate, setLayerDate] = useState(new Date().getDate())
+  const [hours, setHorario] = useState(new Date().toLocaleTimeString())
+
+  const [showDate, setShow] = useState(false);
+  const [showTime, setShowT] = useState(false);
+
+  const [date, setData] = useState(new Date().getDate())
+  const [mode, setMode] = useState('date')
 
   const onChange = (event, date) => {
-    setShow(Platform.OS === 'ios');
-    setDtNasc(date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear());
+    setShow(false);
+
+    setData(date.toLocaleDateString());
+    setLayerDate(date.getDate());
+  };
+
+  const onChangeT = (event, date) => {
+    setShowT(false);
+    setHorario(date.toLocaleTimeString());
+
+  };
+
+  const showMode = (currentMode) => {
+    setShow(true);
+    setMode(currentMode);
+  };
+
+  const showModeT = (currentMode) => {
+    setShowT(true);
+    setMode(currentMode);
   };
 
   return (
@@ -25,25 +47,42 @@ export default function Horario() {
       <View style={styles.dateTimeContainer} >
         <TouchableOpacity style={styles.textInput} onPress={() => { setShow(true); }}>
           <View>
-            <Text style={styles.textDate} > {(dtnasc.toString())} </Text>
-            <Text style={styles.textDay} > {(data.getDate().toString())} </Text>
+            <Text style={styles.textDate} > Dia que comeu </Text>
+            <Text style={styles.textDay} > {layerDate} </Text>
           </View>
         </TouchableOpacity>
-        <Text style={styles.text} >Ás 15:30</Text>
+
+        <TouchableOpacity onPress={() => { showModeT('time'); }}>
+          <View>
+            <Text style={styles.text} > Ás {hours} </Text>
+          </View>
+        </TouchableOpacity>
       </View>
 
 
-      <TouchableOpacity style={styles.btn} onPress={() => { nav.navigate('Prato') }}>
+      <TouchableOpacity style={styles.btn} onPress={() => { nav.navigate('Prato', { date, hours }) }}>
         <View>
           <Text style={styles.txtButton} >AVANÇAR</Text>
         </View>
       </TouchableOpacity>
 
-      {show && (
+      {showDate && (
         <DateTimePicker
+          mode={'date'}
           value={new Date()}
-          display="default"
+          display='spinner'
           onChange={onChange}
+          maximumDate={new Date()}
+        />
+      )}
+
+      {showTime && (
+        <DateTimePicker
+          mode={mode}
+          value={new Date()}
+          display='spinner'
+          onChange={onChangeT}
+          maximumDate={new Date()}
         />
       )}
     </View>
