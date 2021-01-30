@@ -1,6 +1,6 @@
 <h1>Gliçar</h1>
 
-<p>Aplicativo mobile que visa acompanhar os portadores da diabetes tipo 2.</p>
+<p>O projeto de Software Gliçar é um aplicativo mobile voltado para portadores da doença da Diabetes Mellitus tipo 2, o programa visa o auxílio no controle da doença no dia a dia do portador, para esse objetivo ser realizado o software conta com funcionalidades de extrema importância como gráficos das taxas de variações de glicemia de dias por valores da taxa, como também cardápios personalizados que visam informar os valores calóricos e nutricionais dos alimentos a serem consumidos pelo usuário, tendo em mente a porção utilizada como também o histórico da alimentação salva desse cardápio.</p>
 
 <h1>Tecnologias</h1>
 
